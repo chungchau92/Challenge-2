@@ -8,10 +8,13 @@
 .mt-30{
     margin-top: 3rem;
 }
+html , body {
+    
+}
 
 .grid {
-    width: 100%;
     width: 150rem;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -44,7 +47,6 @@ html{
 }
 
 .header {
-    min-width: 120rem;
     height: 13rem;
     background-color: var(--background-text-color);
     display: flex;
@@ -58,7 +60,7 @@ html{
 
 .header__title-link {
     display: block;
-    font-size: 8rem;
+    font-size: 7rem;
     font-weight: 600;
     text-decoration: none;
     color: var(--background-text-color);
@@ -67,26 +69,30 @@ html{
 }
 
 .header__nav {
-    padding-right: 10rem;
+    padding-right: 9rem;
+    
 }
 
 .header__nav-list {
     list-style: none;
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 
 .header__nav-item {
-
+    display: flex;
+    align-items: center;
+    
 }
 
 .header__nav-link {
     display: block;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     color: var(--primery-color);
     text-decoration: none;
-    margin: 0 0.6rem;
-    padding: 0 1rem;
+    margin: 0 0.5rem;
+    padding: 0 0.5rem;
     border-bottom: 4px solid var(--primery-color);
 }
 /* Slider */
@@ -95,11 +101,10 @@ html{
 }
 
 .slider__img {
-    width: 100%;
-    min-width: 120rem;
-    height: 36rem;
-    background-size: contain;
+    padding-top: 50%;
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .slider__img-subtitle {
@@ -119,13 +124,13 @@ html{
 /* Body */
 /* About me */
 #About-Me .section__heading {
-    padding: 0 1.5rem 12rem 0;
+    padding: 0 1.5rem 14rem 0;
     
 }
 
 .section__heading {
     padding-right: 1.5rem;
-    font-size: 6rem;
+    font-size: 4.4rem;
     color: var(--body-text-color);
     text-align: right;
     border-right: 5px solid var(--body-text-color);
@@ -154,9 +159,13 @@ html{
     background-size: 100%;
     background-position: center;
     border: 0.5rem solid var(--primery-color);
+    background-repeat: no-repeat;
+    padding-top: 50%;
+    
 }
 /* hover change rgba */
-.section__img--full::after {
+.section__img--full:hover::after {
+    cursor: pointer;
     position: absolute;
     content: "";
     display: block;
@@ -164,12 +173,7 @@ html{
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: inherit;
-}
-
-.section__img--full:hover {
     background-color: rgba(173, 104, 14, 0.5);
-    cursor: pointer;
 }
 
 
@@ -211,14 +215,14 @@ html{
 .section__img--half-left {
     width: 100%;
     height: 20rem;
-    background-size: 100%;
     background-size: cover;
     background-position: center;
     border: 0.5rem solid var(--primery-color);
     background-repeat: no-repeat;
 }
 
-.section__img--half-left::after {
+.section__img--half-left:hover::after {
+    cursor: pointer;
     position: absolute;
     content: "";
     display: block;
@@ -226,24 +230,21 @@ html{
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: inherit;
-}
-
-.section__img--half-left:hover {
-    background-color: rgba(173, 104, 14, 0.5);
-    cursor: pointer;
+    background-color: rgba(14, 173, 35, 0.5);
 }
 
 .section__img--half-right {
     width: 100%;
     height: 20rem;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     border: 0.5rem solid var(--primery-color);
     background-repeat: no-repeat;
 }
 
-.section__img--half-right::after {
+
+.section__img--half-right:hover::after {
+    cursor: pointer;
     position: absolute;
     content: "";
     display: block;
@@ -251,22 +252,22 @@ html{
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: inherit;
-}
-
-.section__img--half-right:hover {
-    background-color: rgba(46, 173, 14, 0.5);
-    cursor: pointer;
+    background-color: rgba(41, 53, 155, 0.5);
 }
 
 /* COntact */
-#contact .section__heading {
-    
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex: 1;
+    flex-wrap: wrap;
 }
 
 .contact__social {
     margin-top: 5rem;
     text-align: center;
+    margin-right: 2rem;
 }
 
 .contact__link {
@@ -275,4 +276,101 @@ html{
     font-size: 2rem;
     color: var(--body-text-color);
     border-bottom: 5px solid var(--body-text-color);
+}
+
+/* Responsive */
+/* pc */
+@media screen and (min-width:1024px) {
+    
+}
+
+/* tablet */
+@media  screen and (min-width:740px) and (max-width:1023px) {
+
+    .header__nav {
+        display: none;
+    }
+
+    .grid__column-2 {
+        display: none;
+    }
+
+    .grid__full-width {
+        width: 100%;
+    }
+
+    .section__img,
+    .section__img-left,
+    .section__img-right{
+        padding: 0;
+        margin: 1rem 0 0 0;
+    }
+    .section__img--full {
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .section__img-right {
+        margin-top: 3rem;
+    }
+
+}
+
+/* Mobile */
+@media screen and (max-width:739px) {
+    .header__title-link {
+        display: block;
+        font-size: 4rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--background-text-color);
+        background-color: var(--primery-color);
+        padding: 0 2rem 0 2rem;
+        width: 100%;
+        max-width: 40rem;
+    }
+
+    .slider__img-subtitle {
+        color: var(--background-text-color);
+        background-color: var(--primery-color);
+        position: absolute;
+        content: "";
+        display: block;
+        font-size: 2rem;
+        min-width: 10rem;
+        height: 6rem;
+        right: 5rem;
+        bottom: 3rem;
+        padding: 1rem;
+        line-height: 4.5rem;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .grid__column-2 {
+        display: none;
+    }
+
+    .grid__full-width {
+        width: 100%;
+    }
+
+    .section__img,
+    .section__img-left,
+    .section__img-right{
+        padding: 0;
+        margin: 1rem 0 0 0;
+    }
+    .section__img--full {
+        margin: 0;
+        padding: 50% 0 0 0;
+       height: 20rem;
+    }
+
+    .section__img-right {
+        margin-top: 3rem;
+    }
 }
